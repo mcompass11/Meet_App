@@ -7,12 +7,13 @@ class NumberOfEvents extends Component {
   }
 
   handleInputChanged = (event) => {
-    const value = event.target.value;
-    if (value < 1 || value > 8) {
-        console.log('Try choosing a number between 1 and 8.')
+    const number = event.target.value;
+
+    if (number < 1) {
+        console.log('Try choosing a number from 1 to 8.')
     } else {
       this.setState({
-        numberOfEvents: value,
+        numberOfEvents: number,
         errorText: ''
       });
     }
@@ -24,9 +25,9 @@ class NumberOfEvents extends Component {
         <p>Number of Events:</p>
         <input 
           type = 'number'
+          value={this.state.numberOfEvents}
           className='number'
-          value={this.props.numberOfEvents}
-          onChange={this.handleInputChanged}
+          onChange={(e) => this.handleInputChanged(e)}
         />
       </div>
     );
