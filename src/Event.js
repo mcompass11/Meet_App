@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 
+export const extractEvent = (events) => {
+  var extractEvent = events.map((event) => event);
+  var event = [...new Set(extractEvent)];
+  alert(event);
+  return event;
+};
 class Event extends Component {
   state = {
     collapsed: true,
