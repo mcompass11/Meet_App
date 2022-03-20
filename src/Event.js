@@ -1,11 +1,19 @@
 import React, { Component } from "react";
 
+// export const extractEvent = (events) => {
+//   var extractEvent = events.map((mockData) => mockData);
+//   var event = [...new Set(extractEvent)];
+//   console.log(event);
+//   return event;
+// };
+
 export const extractEvent = (events) => {
-  var extractEvent = events.map((event) => event);
-  var event = [...new Set(extractEvent)];
-  alert(event);
-  return event;
+  var extractSummary = events.map((event) => event.summary);
+  var summary = [...new Set(extractSummary)];
+  alert(summary);
+  return summary;
 };
+
 class Event extends Component {
   state = {
     collapsed: true,
@@ -20,8 +28,8 @@ class Event extends Component {
   };
 
   render() {
-    //const { event } = this.props;
-    const { collapsed, event } = this.state;
+    const { event } = this.props;
+    const { collapsed } = this.state;
 
     return (
       <div className="event">
