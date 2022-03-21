@@ -1,24 +1,17 @@
 import React, { Component } from "react";
 
-// export const extractEvent = (events) => {
-//   var extractEvent = events.map((mockData) => mockData);
-//   var event = [...new Set(extractEvent)];
-//   console.log(event);
-//   return event;
-// };
-
 export const extractEvent = (events) => {
-  var extractSummary = events.map((event) => event.summary);
-  var summary = [...new Set(extractSummary)];
-  alert(summary);
-  return summary;
+  var extractEvent = events.map((event) => event);
+  var event = [...new Set(extractEvent)];
+  console.log(event);
+  return event;
 };
 
-class Event extends Component {
+export class Event extends Component {
   state = {
     collapsed: true,
-    event: [],
-    numberOfEvents: []
+    // events: [],
+    // numberOfEvents: []
   };
 
   handleItemClicked = () => {
@@ -36,7 +29,7 @@ class Event extends Component {
         <h3 className="summary">{event.summary}</h3>
 
         <p className="start-date">
-          {event.dateTime} ({event.timeZone})
+          {event.start.dateTime} ({event.start.timeZone})
         </p>
 
         <button className={`${collapsed ? "show" : "close"}-details`} onClick={this.handleItemClicked}>
@@ -55,5 +48,3 @@ class Event extends Component {
     );
     }
 }
-
-export default Event;

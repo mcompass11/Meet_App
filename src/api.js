@@ -17,6 +17,13 @@ export const extractLocations = (events) => {
   return locations;
 };
 
+export const extractEvent = (events) => {
+  var extractEvent = events.map((event) => event);
+  var event = [...new Set(extractEvent)];
+  console.log(event);
+  return event;
+};
+
 const checkToken = async (accessToken) => {
   const result = await fetch(
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
