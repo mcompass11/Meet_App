@@ -15,3 +15,5 @@ export function EventList(props) {
       </div>
     );
   }
+
+  export default EventList;

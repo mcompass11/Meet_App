@@ -17,12 +17,7 @@ export const extractLocations = (events) => {
   return locations;
 };
 
-export const extractEvent = (events) => {
-  var extractEvent = events.map((event) => event);
-  var event = [...new Set(extractEvent)];
-  console.log(event);
-  return event;
-};
+
 
 const checkToken = async (accessToken) => {
   const result = await fetch(
