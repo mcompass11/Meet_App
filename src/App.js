@@ -36,13 +36,19 @@ class App extends Component {
     );
   };
 
-  updateEvents = (location) => {
+  updateEvents = (location, eventCount) => {
+    this.mounted = true;
     getEvents().then((events) => {
-      const locationEvents = (location === 'all') ?
-      events : events.filter((event) => event.location === location);
+      const locationEvents = (location === 'all' && eventCount === 0) ?
+      events : location !== 'all' && eventCount === 0 ?
+       events.filter((event) => event.location === location) :
+       events.slice(0, eventCount);
+      if (this.mounted) {
       this.setState({
-        events: locationEvents
+        events: locationEvents,
+        numberOfEvents: eventCount,
       });
+      }
     });
   }
 
