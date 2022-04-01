@@ -4,6 +4,7 @@ import {EventList} from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
+import { WarningAlert } from './Alert';
 import './nprogress.css';
 
 class App extends Component {
@@ -22,6 +23,16 @@ class App extends Component {
         this.setState({ events, locations: extractLocations(events) });
       }
     });
+
+    if (!navigator.onLine) {
+      this.setState({
+        infoText: 'You are not connected to the Internet!'
+      });
+    } else {
+      this.setState({
+        infoText:''
+      });
+    }
   }
 
   componentWillUnmount(){
@@ -52,6 +63,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <WarningAlert text={this.state.infoText} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} numberOfEvents={this.state.numberOfEvents} />
         <NumberOfEvents updateNumberOfEvents={(number) => {
           this.updateNumberOfEvents(number);}} updateEvents={this.updateEvents}/>
