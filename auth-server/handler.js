@@ -160,6 +160,7 @@ module.exports.getCalendarEvents = async (event) => {
       statusCode: 200,
       headers: {
         "Access-Control-Allow-Origin": "*",
+        ...results.config.headers,
       },
       body: JSON.stringify({ events: results.data.items }),
     };
