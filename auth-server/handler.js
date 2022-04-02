@@ -106,7 +106,7 @@ module.exports.getAccessToken = async (event) => {
       return {
         statusCode: 200,
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin": "*, https://mcompass11.github.io",
         },
         body: JSON.stringify(token),
       };
@@ -117,7 +117,7 @@ module.exports.getAccessToken = async (event) => {
       return {
         statusCode: 500,
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin": "*, https://mcompass11.github.io",
         },
         body: JSON.stringify(err),
       };
