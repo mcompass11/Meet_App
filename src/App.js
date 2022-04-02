@@ -15,7 +15,6 @@ class App extends Component {
     locations: [],
     numberOfEvents: 8,
     currentLocation: 'all',
-
   }
 
   async componentDidMount() {

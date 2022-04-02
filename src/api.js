@@ -99,7 +99,7 @@ const getToken = async (code) => {
     'https://qrr9ffhmc4.execute-api.us-east-1.amazonaws.com/dev/api/token' + '/' + encodeCode
   )
   .then((res) => {
-    return res.json();
+    return res.json()
   })
   .catch((error) => error);
 
