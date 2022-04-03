@@ -35,11 +35,11 @@ class App extends Component {
       });
     }
   }
-
   componentWillUnmount(){
     this.mounted = false;
   }
 
+  
   updateNumberOfEvents = (numberOfEvents) => {
     this.setState(
       {
