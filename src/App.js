@@ -48,8 +48,6 @@ class App extends Component {
       this.updateEvents(this.state.currentLocation)
     );
   };
-
-  
   updateEvents = (location) => {
 
     getEvents().then((events) => {

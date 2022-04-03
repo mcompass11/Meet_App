@@ -2,7 +2,6 @@
   "name": "meet",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://qrr9ffhmc4.execute-api.us-east-1.amazonaws.com/dev/api/token",
   "homepage": "https://mcompass11.github.io/Meet_App",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",

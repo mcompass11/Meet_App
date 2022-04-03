@@ -29,7 +29,7 @@ const credentials = {
   redirect_uris: ["https://mcompass11.github.io/Meet_App/"],
   javascript_origins: ["https://mcompass11.github.io", "http://localhost:3000"],
   headers: {
-    'Access-Control-Allow-Origin': 'https://mcompass11.github.io'
+    'Access-Control-Allow-Origin': '*'
   },
 };
 const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
@@ -67,7 +67,7 @@ module.exports.getAuthURL = async () => {
   return {
     statusCode: 200,
     headers: {
-      "Access-Control-Allow-Origin": "https://mcompass11.github.io",
+      "Access-Control-Allow-Origin": "*",
     },
     body: JSON.stringify({
       authUrl: authUrl,
@@ -106,7 +106,7 @@ module.exports.getAccessToken = async (event) => {
       return {
         statusCode: 200,
         headers: {
-          "Access-Control-Allow-Origin": "https://mcompass11.github.io",
+          "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify(token),
       };
@@ -156,7 +156,7 @@ module.exports.getCalendarEvents = async (event) => {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": "https://mcompass11.github.io",
+        "Access-Control-Allow-Origin": "*",
         ...results.config.headers,
       },
       body: JSON.stringify({ events: results.data.items }),
@@ -168,7 +168,7 @@ module.exports.getCalendarEvents = async (event) => {
     return {
       statusCode: 500,
       headers: {
-        "Access-Control-Allow-Origin": "https://mcompass11.github.io",
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(err),
     };
