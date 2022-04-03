@@ -39,7 +39,7 @@ class App extends Component {
     this.mounted = false;
   }
 
-  
+
   updateNumberOfEvents = (numberOfEvents) => {
     this.setState(
       {
@@ -49,6 +49,7 @@ class App extends Component {
     );
   };
 
+  
   updateEvents = (location) => {
 
     getEvents().then((events) => {
