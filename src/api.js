@@ -96,7 +96,7 @@ const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
     // eslint-disable-next-line no-useless-concat
-     'https://qrr9ffhmc4.execute-api.us-east-1.amazonaws.com/dev/api/token' + '/' + encodeCode
+     '/' + encodeCode
   )
   .then((res) => {
     return res.json()
