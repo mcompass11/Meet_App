@@ -59,6 +59,7 @@ class App extends Component {
       });
     });
     }
+
     getData = () => {
       const { locations, events } = this.state;
       const data = locations.map((location) => {
