@@ -35,7 +35,6 @@ class App extends Component {
       });
     }
   }
-
   componentWillUnmount(){
     this.mounted = false;
   }
@@ -49,7 +48,6 @@ class App extends Component {
       this.updateEvents(this.state.currentLocation)
     );
   };
-  
   updateEvents = (location) => {
 
     getEvents().then((events) => {
@@ -61,7 +59,6 @@ class App extends Component {
       });
     });
     }
-
     getData = () => {
       const { locations, events } = this.state;
       const data = locations.map((location) => {
